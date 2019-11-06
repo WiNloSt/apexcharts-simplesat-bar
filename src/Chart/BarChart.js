@@ -20,11 +20,10 @@ class MyApexChart extends React.Component {
       this.props.data,
     ).reverse()
 
-    window.apexRef = this.ref
     return (
       <div className="bar">
         <Chart
-          ref={this.ref}
+          ref={this.props.forwardedRef}
           options={{
             plotOptions: {
               bar: {
@@ -141,4 +140,6 @@ class MyApexChart extends React.Component {
   }
 }
 
-export default MyApexChart
+export default React.forwardRef((props, ref) => {
+  return <MyApexChart {...props} forwardedRef={ref} />
+})

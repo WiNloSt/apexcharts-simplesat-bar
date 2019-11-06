@@ -78,7 +78,7 @@ function getGroup(displayBy, data) {
   }
 
   if (displayBy === 'month') {
-    const format = 'MMM'
+    const format = 'MMM YY'
     return startDate.format(format)
   }
 }
